@@ -3,6 +3,7 @@ package edu.orangecoastcollege.cs273.wheretonext;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -68,9 +69,9 @@ public class CollegeListActivity extends AppCompatActivity {
         EditText mCollegeTuitionEditText = (EditText) findViewById(R.id.tuitionEditText);
         RatingBar mCollegeRatingBar = (RatingBar) findViewById(R.id.collegeRatingBar);
 
-        if (mCollegeNameEditText.getText() == null
-                || mCollegePopulationEditText.getText() == null
-                || mCollegeTuitionEditText.getText() == null)
+        if (TextUtils.isEmpty(mCollegeNameEditText.getText().toString())
+                || TextUtils.isEmpty(mCollegePopulationEditText.getText().toString())
+                || TextUtils.isEmpty(mCollegeTuitionEditText.getText().toString()))
             Toast.makeText(this, "All information about the college must be provided", Toast.LENGTH_LONG).show();
         else
         {
